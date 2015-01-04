@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
-gem 'bootstrap-sass', '2.1'
+gem 'bootstrap-sass', '3.1.1.0'
 gem 'pg', '0.12.2'
 gem 'jquery-rails', '2.0.2'
+gem 'slim-rails', '3.0.1'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150104153530) do
+ActiveRecord::Schema.define(:version => 20150104223714) do
 
   create_table "stamps", :force => true do |t|
     t.string   "brand"
@@ -20,5 +20,7 @@ ActiveRecord::Schema.define(:version => 20150104153530) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "stamps", ["brand", "magazine", "page"], :name => "index_stamps_on_brand_and_magazine_and_page"
 
 end
