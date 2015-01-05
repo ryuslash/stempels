@@ -22,7 +22,7 @@ class Stamp < ActiveRecord::Base
             length: { maximum: 100 },
             uniqueness: {
               scope: [:magazine, :page],
-              message: I18n.t("should only appear on a page once")
+              message: I18n.t("stamps.should_be_unique")
             }
 
   validates :magazine, presence: true, length: { maximum: 100 }

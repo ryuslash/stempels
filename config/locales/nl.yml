@@ -3,6 +3,39 @@ nl:
   brand: merk
   magazine: magazine
   page: pagina
+  save: opslaan
+  add_stamp: Stempel toevoegen
 
   stamps:
+    new_stamp: Nieuwe stempel toevoegen
     none_found: Geen stempels gevonden.
+    should_be_unique: is al bekend op deze pagina van dit magazine.
+    created: Stempel is succesvol toegevoegd.
+    form_error:
+      :one: "Formulier bevat 1 fout."
+      :other: "Formulier bevat %{count} fouten."
+
+  helpers:
+    label:
+      stamp:
+        brand: Merk
+        magazine: Magazine
+        page: Pagina
+
+  activerecord:
+    attributes:
+      stamp:
+        brand: Merk
+        magazine: Magazine
+        page: Pagina
+    errors:
+      models:
+        stamp:
+          attributes:
+            brand:
+              blank: moet ingevuld worden.
+            magazine:
+              blank: moet ingevuld worden.
+            page:
+              blank: moet ingevuld worden.
+              not_a_number: moet een getal zijn.

@@ -1,2 +1,26 @@
-h1 Stamps#new
-p Find me in app/views/stamps/new.html.slim
+- provide(:title, t('stamps.new_stamp'))
+h1 = t('stamps.new_stamp')
+
+.row
+  .span6.offset3
+    = form_for(@stamp, html: { class: 'form-horizontal' }) do |f|
+      == render 'shared/error_messages'
+
+      .form-group
+        = f.label :brand, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.text_field :brand, class: 'form-control'
+
+      .form-group
+        = f.label :magazine, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.text_field :magazine, class: 'form-control'
+
+      .form-group
+        = f.label :page, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.number_field :page, class: 'form-control'
+
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          = f.submit t('save').capitalize, class: 'btn btn-large btn-primary', id: 'save'

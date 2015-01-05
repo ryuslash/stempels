@@ -1,0 +1,10 @@
+- if @stamp.errors.any?
+  #error_explanation
+    .alert.alert-danger.alert-dismissible role="alert"
+      button.close type="button" data-dismiss="alert" aria-label="Close" aria-hidden="true"
+        span &times;
+      = t('stamps.form_error', count: @stamp.errors.count)
+    ul
+      - @stamp.errors.full_messages.each do |msg|
+        li
+          p.text-danger #{msg}

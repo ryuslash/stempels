@@ -1,6 +1,5 @@
 Stempels::Application.routes.draw do
-  get "stamps/new"
-  get "stamps/create"
+  resources :stamps
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
