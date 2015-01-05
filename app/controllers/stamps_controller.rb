@@ -1,6 +1,15 @@
 class StampsController < ApplicationController
   def index
-    @stamps = Stamp.all
+    if params[:brand].present?
+      @stamps = Stamp.branded(params[:brand])
+    else
+      @stamps = Stamp.all
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @stamps }
+    end
   end
 
   def new

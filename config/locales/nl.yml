@@ -5,6 +5,7 @@ nl:
   page: pagina
   save: opslaan
   add_stamp: Stempel toevoegen
+  search_by_brand: Zoek op merk
 
   stamps:
     new_stamp: Nieuwe stempel toevoegen

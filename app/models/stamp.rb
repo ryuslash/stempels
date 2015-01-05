@@ -27,4 +27,6 @@ class Stamp < ActiveRecord::Base
 
   validates :magazine, presence: true, length: { maximum: 100 }
   validates :page, presence: true, numericality: { greater_than: 0 }
+
+  scope :branded, -> (brand) { where('brand ILIKE ?', "%#{brand}%") }
 end

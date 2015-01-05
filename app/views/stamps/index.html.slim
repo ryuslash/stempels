@@ -1,19 +1,24 @@
 - provide(:title, t('List'))
 h1 Stempels
 
-table.table.table-striped
-  tr
-    th = t('brand').capitalize
-    th = t('magazine').capitalize
-    th.right-align = t('page').capitalize
+input type="text" class="form-control" placeholder=t('search_by_brand') id="search-by-brand"
+br
 
-  - if @stamps.empty?
+table#stamps.table.table-striped
+  thead
     tr
-      td colspan="3"
-        = t('stamps.none_found')
-  - else
+      th = t('brand').capitalize
+      th = t('magazine').capitalize
+      th.right-align = t('page').capitalize
+
+  tbody
     - @stamps.each do |stamp|
       tr
         td = stamp.brand
         td = stamp.magazine
         td.right-align = stamp.page
+
+  tfoot
+    tr id="nothing-found" style=("display: none" if not @stamps.empty?)
+      td colspan="3"
+        = t('stamps.none_found')
