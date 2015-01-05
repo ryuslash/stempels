@@ -1,2 +1,8 @@
 nl:
   List: Lijst
+  brand: merk
+  magazine: magazine
+  page: pagina
+
+  stamps:
+    none_found: Geen stempels gevonden.

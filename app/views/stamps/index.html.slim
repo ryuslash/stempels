@@ -1,4 +1,19 @@
 - provide(:title, t('List'))
 h1 Stempels
 
-p Find me in app/views/stamps/index.html.slim
+table.table.table-striped
+  tr
+    th = t('brand').capitalize
+    th = t('magazine').capitalize
+    th.right-align = t('page').capitalize
+
+  - if @stamps.empty?
+    tr
+      td colspan="3"
+        = t('stamps.none_found')
+  - else
+    - @stamps.each do |stamp|
+      tr
+        td = stamp.brand
+        td = stamp.magazine
+        td.right-align = stamp.page
